@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: gasthear
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gasthear
+  template:
+    metadata:
+      labels:
+        app: gasthear
+    spec:
+      containers:
+      - name: gasthear
+        image: recollir/gasthear:1
+        ports:
+        - containerPort: 8080
+
+        
